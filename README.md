@@ -1,13 +1,17 @@
 # Clio Manage Firm Assistant
 
-A private, hosted connection between Clio Manage and ChatGPT/Codex. This first release is deliberately **read-only**. It can:
+An open-source, hosted MCP connector between Clio Manage and ChatGPT/Codex. It helps authorized firm users:
 
 - confirm which Clio user is connected;
 - list active Clio users and visible calendars;
 - review calendar availability, hiding event names as **Busy** by default; and
 - review tasks by status, due date, or assignee.
 
-Every lawyer connects with their own Clio account. The assistant can only see records that Clio already allows that person to see.
+Every lawyer connects with their own Clio account. Access is governed by the connector's available tools, the permissions selected in the firm's Clio developer app, and each user's Clio role.
+
+## Permissions and capabilities
+
+The firm administrator chooses the Clio app permissions. Each user's Clio role can restrict access further. This release currently exposes read actions for calendars, calendar entries, users, and tasks. Granting write permission in Clio does not by itself add write actions to the connector; write tools must also be implemented and reviewed here.
 
 ## The simple setup
 
