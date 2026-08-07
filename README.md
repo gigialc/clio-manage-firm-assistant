@@ -17,11 +17,11 @@ The firm administrator chooses the Clio app permissions. Each user's Clio role c
 
 You do this once as the administrator. Lawyers do not run a script and do not receive the Client Secret.
 
-### 1. Put this folder in a private GitHub repository
+### 1. Use the public source repository
 
-Create a private repository, upload the contents of this folder, and make sure `render.yaml` is at the top level of the repository.
+Connect Render directly to [gigialc/clio-manage-firm-assistant](https://github.com/gigialc/clio-manage-firm-assistant). The included `render.yaml` creates the test server and database.
 
-Do **not** upload a `.env` file or paste the Clio Client Secret into any document, email, or chat.
+Do **not** commit a `.env` file or paste the Clio Client Secret into any document, email, issue, or chat.
 
 ### 2. Copy the two Clio app values
 
@@ -32,19 +32,19 @@ Copy these values somewhere temporarily and securely:
 - **Client ID**
 - **Client Secret**
 
-For permissions, select the minimum read-only access needed for:
+For this release, select **Read** access for:
 
 - users;
 - calendars and calendar entries; and
 - tasks.
 
-If Clio groups permissions by resource, choose **Read** for those resources only. Leave **Write**, **Create**, and **Delete** off. Changes to an app's permissions may require users to reconnect it.
+Grant additional permissions only after matching connector tools have been implemented and reviewed. Changes to a Clio app's permissions may require users to reconnect it.
 
 ### 3. Deploy it on Render
 
 1. Sign in to [Render](https://dashboard.render.com/).
 2. Choose **New → Blueprint**.
-3. Connect the private GitHub repository from step 1.
+3. Connect the public GitHub repository from step 1.
 4. Render will find `render.yaml` and create the web service and private database.
 5. When prompted, paste the Clio **Client ID** and **Client Secret** into Render's secret fields.
 6. Choose **Apply** and wait for the deployment to finish.
