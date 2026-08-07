@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: clio-manage-mcp
+    runtime: docker
+    plan: starter
+    healthCheckPath: /health
+    envVars:
+      - key: CLIO_CLIENT_ID
+        sync: false
+      - key: CLIO_CLIENT_SECRET
+        sync: false
+      - key: CLIO_REGION
+        value: US
+      - key: TOKEN_ENCRYPTION_KEY
+        generateValue: true
+      - key: DATABASE_URL
+        fromDatabase:
+          name: clio-manage-mcp-db
+          property: connectionString
+      - key: TRUST_PROXY
+        value: "1"
+
+databases:
+  - name: clio-manage-mcp-db
+    plan: basic-256mb
