@@ -2,7 +2,7 @@ services:
   - type: web
     name: clio-manage-mcp
     runtime: docker
-    plan: starter
+    plan: free
     healthCheckPath: /health
     envVars:
       - key: CLIO_CLIENT_ID
@@ -22,4 +22,4 @@ services:
 
 databases:
   - name: clio-manage-mcp-db
-    plan: basic-256mb
+    plan: free
