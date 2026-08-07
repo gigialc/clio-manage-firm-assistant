@@ -45,7 +45,7 @@ If Clio groups permissions by resource, choose **Read** for those resources only
 5. When prompted, paste the Clio **Client ID** and **Client Secret** into Render's secret fields.
 6. Choose **Apply** and wait for the deployment to finish.
 
-The included Blueprint uses an always-on Starter web service and a small PostgreSQL database. Confirm Render's current price before approving the deployment.
+The included Blueprint uses Render's free web service and free PostgreSQL database so you can test without paying. The web service sleeps after 15 minutes without traffic and can take about a minute to wake up. The free database expires after 30 days, so this configuration is for testing only—not ongoing law-firm use.
 
 ### 4. Add the exact Clio redirect address
 
